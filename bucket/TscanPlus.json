@@ -27,7 +27,10 @@
             ]
         }
     },
-    "checkver": "github",
+     "checkver": {
+        "github": "https://github.com/TideSec/TscanPlus",
+        "regex": "/releases/tag/([\\d.]+)"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
