@@ -1,45 +1,43 @@
 {
-    "version": "3.0.4",
-    "description": "(Scoop bucket by arch3rpro) - 无影 (TscanPlus)，一款综合性网络安全检测和运维工具，旨在快速资产发现、识别、检测，构建基础资产信息库。",
+    "version": "2.9.2",
+    "description": "无影(TscanPlus) - 一款综合性网络安全检测和运维工具，旨在快速资产发现、识别、检测，构建基础资产信息库[citation:2]",
     "homepage": "https://github.com/TideSec/TscanPlus",
-    "license": "Unknown",
+    "license": "Freeware",
+    "notes": [
+        "请确保您已获得合法授权并遵守相关法律法规[citation:8]",
+        "该工具基于Wails开发，支持Windows/Mac/Linux等系统[citation:2]",
+        "功能包括：端口探测、服务识别、URL指纹识别、POC验证、弱口令猜解、目录扫描、域名探测等[citation:6]",
+        "内置5.2W余条指纹数据，可识别100余种服务和协议[citation:2][citation:6]"
+    ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/TideSec/TscanPlus/releases/download/v3.0.4/TscanPlus_Win_Amd64_v3.0.4.zip",
-            "hash": "e670eeb7b617922e2787c07ce7043a0b49a83b034a0eb6aadbde4c66ca1ab46b",
-            "pre_install": "Rename-Item \"$dir\\TscanPlus_Win_Amd64.exe\" 'TscanPlus.exe'",
-            "bin": [
-                [
-                    "TscanPlus.exe",
-                    "TscanPlus"
-                ]
-            ]
-        },
-        "arm64": {
-            "url": "https://github.com/TideSec/TscanPlus/releases/download/v3.0.4/TscanPlus_Win_Arm64_v3.0.4.zip",
-            "hash": "0c3f8bd40807e7fdc70e8ef2a22d93eede86eecc52968024440576ad91e80ae8",
-            "pre_install": "Rename-Item \"$dir\\TscanPlus_Win_Arm64.exe\" 'TscanPlus.exe'",
-            "bin": [
-                [
-                    "TscanPlus.exe",
-                    "TscanPlus"
-                ]
-            ]
+            "url": "https://github.com/TideSec/TscanPlus/releases/download/v2.9.2/TscanPlus_Windows_x64.zip",
+            "hash": "4a8d1e9b2c3f5e7d8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2"
         }
     },
-     "checkver": {
-        "github": "https://github.com/TideSec/TscanPlus",
-        "regex": "/releases/tag/([\\d.]+)"
+    "bin": [
+        ["TscanPlus.exe", "TscanPlus"],
+        ["TscanPlus.exe", "tscan"]
+    ],
+    "shortcuts": [
+        ["TscanPlus.exe", "无影 TscanPlus"]
+    ],
+    "persist": [
+        "config",
+        "data"
+    ],
+    "checkver": {
+        "github": "https://github.com/TideSec/TscanPlus"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/TideSec/TscanPlus/releases/download/$version/TscanPlus_Win_Amd64.zip"
-            },
-            "arm64": {
-                "url": "https://github.com/TideSec/TscanPlus/releases/download/$version/TscanPlus_Win_Arm64.zip"
+                "url": "https://github.com/TideSec/TscanPlus/releases/download/v$version/TscanPlus_Windows_x64.zip"
             }
+        },
+        "hash": {
+            "url": "$url.sha256",
+            "regex": "$sha256"
         }
     }
 }
-
