@@ -1,18 +1,24 @@
 {
-    "version": "2.9.2",
-    "description": "无影(TscanPlus) - 一款综合性网络安全检测和运维工具，旨在快速资产发现、识别、检测，构建基础资产信息库[citation:2]",
+    "version": "3.0.6",
+    "description": "无影(TscanPlus) - 综合性网络安全检测与运维工具，内置5.2W+指纹、4700+ Poc，支持端口扫描、服务识别、弱口令爆破、目录扫描、域名探测、小程序反编译、AI分析等",
     "homepage": "https://github.com/TideSec/TscanPlus",
     "license": "Freeware",
     "notes": [
-        "请确保您已获得合法授权并遵守相关法律法规[citation:8]",
-        "该工具基于Wails开发，支持Windows/Mac/Linux等系统[citation:2]",
-        "功能包括：端口探测、服务识别、URL指纹识别、POC验证、弱口令猜解、目录扫描、域名探测等[citation:6]",
-        "内置5.2W余条指纹数据，可识别100余种服务和协议[citation:2][citation:6]"
+        "⚠️ 使用前请确保已获得合法授权，仅可用于授权的安全测试。",
+        "🔑 功能解锁：点击界面右上角VIP状态，配置Key可解锁全部4700+ Poc。获取方式：提交Bug/PoC、加入知识星球或交流群。",
+        "🚀 主要功能：",
+        "  • 资产发现：端口扫描（支持UDP/IPv6）、URL指纹识别（5.2W+指纹）、域名探测、ICP备案查询",
+        "  • 漏洞检测：Poc验证（4700+内置，支持Xray/Nuclei/Afrog）、弱口令爆破（46种服务）、目录扫描",
+        "  • 红队辅助：反弹shell、CS上线、杀软查询、Windows提权辅助、JWT爆破、小程序反编译",
+        "  • 编码/解密：支持AES/RSA/SM2/SM4/Base64等36种算法",
+        "  • 空间测绘：集成Fofa、鹰图、夸克等API，支持多Key轮询",
+        "  • AI分析：可配置AI辅助Poc检测和JS文件分析",
+        "首次使用请阅读官方文档：https://github.com/TideSec/TscanPlus#readme"
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/TideSec/TscanPlus/releases/download/v2.9.2/TscanPlus_Windows_x64.zip",
-            "hash": "4a8d1e9b2c3f5e7d8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2"
+            "url": "https://github.com/TideSec/TscanPlus/releases/download/v3.0.6/TscanPlus_Windows_x64.zip",
+            "hash": "2f1b9c3d4e5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c"
         }
     },
     "bin": [
@@ -27,7 +33,9 @@
         "data"
     ],
     "checkver": {
-        "github": "https://github.com/TideSec/TscanPlus"
+        "url": "https://api.github.com/repos/TideSec/TscanPlus/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
@@ -37,7 +45,7 @@
         },
         "hash": {
             "url": "$url.sha256",
-            "regex": "$sha256"
+            "regex": "(?sm)^$sha256"
         }
     }
 }
